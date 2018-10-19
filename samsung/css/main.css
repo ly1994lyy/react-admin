@@ -1,0 +1,250 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #333;
+  overflow-x: hidden;
+  font-family: "微软雅黑", "Microsoft YaHei", "黑体", "SimHei", "宋体", "SimSun", sans-serif;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  width: 1219px;
+  margin: 0 auto;
+}
+.header {
+  width: 100%;
+  height: 36px;
+  background: #f2f1f2;
+}
+.header .title {
+  height: 36px;
+}
+.header .title .title-left {
+  width: 108px;
+  height: 36px;
+  float: left;
+}
+.header .title .title-left a {
+  font-size: 18px;
+  color: #363636;
+  line-height: 36px;
+}
+.header .title .title-right {
+  float: right;
+  height: 36px;
+}
+.header .title .title-right a {
+  font-size: 15px;
+  color: #363636;
+  line-height: 36px;
+}
+.header .title .title-right a .icon-7 {
+  font-size: 6px;
+  padding-left: 9px;
+}
+.navbar {
+  width: 100%;
+  height: 64px;
+  border-bottom: 2px #ededed solid;
+}
+.navbar .nav {
+  height: 64px;
+}
+.navbar .nav .nav-left {
+  float: left;
+  height: 64px;
+}
+.navbar .nav .nav-left .nav-ul {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.navbar .nav .nav-left .nav-ul li {
+  float: left;
+  padding-right: 33px;
+}
+.navbar .nav .nav-left .nav-ul li a {
+  line-height: 64px;
+  font-size: 15px;
+  color: #363636;
+}
+.navbar .nav .nav-right {
+  float: right;
+}
+.navbar .nav .nav-right img {
+  width: 130px;
+  height: 20px;
+  float: left;
+  margin-top: 22px;
+  margin-right: 94px;
+}
+.navbar .nav .nav-right .navbar-ul {
+  margin: 0;
+  padding: 0;
+  float: right;
+  line-height: 64px;
+}
+.navbar .nav .nav-right .navbar-ul li {
+  float: left;
+  padding-left: 33px;
+}
+.navbar .nav .nav-right .navbar-ul li a {
+  font-size: 15px;
+  color: #363636;
+}
+.navbar .nav .nav-right .navbar-ul li a i {
+  font-size: 20px;
+}
+.banner {
+  width: 100%;
+  height: 427px;
+  position: relative;
+}
+.banner img {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 427px;
+}
+.banner .banner-icon {
+  position: absolute;
+  left: 862px;
+  bottom: 12px;
+}
+.banner .banner-icon ul {
+  margin: 0;
+  padding: 0;
+}
+.banner .banner-icon ul li {
+  float: left;
+  width: 20px;
+  height: 20px;
+  background: #b0b8cc;
+  margin: 0 5px;
+  border-radius: 10px;
+}
+.activity {
+  height: 260px;
+  margin-top: 34px;
+  display: flex;
+  justify-content: space-between;
+}
+.activity img {
+  width: 389px;
+  height: 260px;
+}
+.list {
+  height: 476px;
+}
+.list .list-top {
+  height: 101px;
+}
+.list .list-top span {
+  font-size: 26px;
+  margin: 0;
+  line-height: 101px;
+}
+.list .list-top ul {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  margin-left: 98.5px;
+  margin-top: 50px;
+}
+.list .list-top ul li {
+  cursor: pointer;
+  float: left;
+  font-size: 20px;
+  line-height: 20px;
+  margin: 0 15.5px;
+}
+.list .list-top a {
+  font-size: 20px;
+  margin-right: 41px;
+  margin-top: 52px;
+  float: right;
+}
+.list .list-good {
+  height: 375px;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+}
+.list .list-good .good-span1 {
+  width: 295px;
+  background: #fff;
+}
+.list .list-good .good-span1 .good-xinpin {
+  height: 50px;
+}
+.list .list-good .good-span1 .good-pic {
+  text-align: center;
+}
+.list .list-good .good-span1 .good-pic img {
+  width: 217px;
+  height: 217px;
+}
+.list .list-good .good-span1 .good-price {
+  text-align: center;
+}
+.list .list-good .good-span1 .good-price p,
+.list .list-good .good-span1 .good-price span {
+  font-size: 16px;
+}
+.list .list-good .good-span2 {
+  width: 305px;
+  background: #fff;
+}
+.list .list-good .good-span2 .good-xinpin {
+  height: 50px;
+}
+.list .list-good .good-span2 .good-pic {
+  text-align: center;
+}
+.list .list-good .good-span2 .good-pic img {
+  width: 217px;
+  height: 217px;
+}
+.list .list-good .good-span2 .good-price {
+  text-align: center;
+}
+.list .list-good .good-span2 .good-price p,
+.list .list-good .good-span2 .good-price span {
+  font-size: 16px;
+}
+.pic p {
+  height: 31px;
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 32px;
+}
+.pic .pic-banner {
+  height: 184px;
+  position: relative;
+}
+.pic .pic-banner img {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.pic .pic-banner .pic-icon {
+  position: absolute;
+  left: 592px;
+  bottom: 14px;
+}
+.pic .pic-banner .pic-icon ul li {
+  margin: 0 5px;
+  float: left;
+  width: 16px;
+  height: 16px;
+  background: #d6d6dc;
+  border-radius: 50%;
+}
