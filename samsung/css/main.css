@@ -24,7 +24,6 @@ a {
   height: 36px;
 }
 .header .title .title-left {
-  width: 108px;
   height: 36px;
   float: left;
 }
@@ -141,6 +140,7 @@ a {
   height: 260px;
 }
 .list {
+  position: relative;
   height: 476px;
 }
 .list .list-top {
@@ -165,6 +165,10 @@ a {
   line-height: 20px;
   margin: 0 15.5px;
 }
+.list .list-top ul .active {
+  color: #1428a0;
+  border-bottom: 2px #1428a0 solid;
+}
 .list .list-top a {
   font-size: 20px;
   margin-right: 41px;
@@ -172,9 +176,12 @@ a {
   float: right;
 }
 .list .list-good {
+  position: absolute;
+  left: 0;
+  bottom: 0;
   height: 375px;
   background: #f5f5f5;
-  display: flex;
+  display: none;
   justify-content: space-between;
 }
 .list .list-good .good-span1 {
