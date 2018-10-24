@@ -1,9 +1,11 @@
 body {
-  margin: 0;
-  padding: 0;
   color: #333;
   overflow-x: hidden;
   font-family: "微软雅黑", "Microsoft YaHei", "黑体", "SimHei", "宋体", "SimSun", sans-serif;
+}
+* {
+  padding: 0;
+  margin: 0;
 }
 li {
   list-style: none;
@@ -49,6 +51,7 @@ a {
   width: 100%;
   height: 64px;
   border-bottom: 2px #ededed solid;
+  background: #fff;
 }
 .navbar .nav {
   height: 64px;
@@ -56,12 +59,11 @@ a {
 .navbar .nav .nav-left {
   float: left;
   height: 64px;
+  position: relative;
 }
 .navbar .nav .nav-left .nav-ul {
   width: 100%;
   height: 100%;
-  padding: 0;
-  margin: 0;
 }
 .navbar .nav .nav-left .nav-ul li {
   float: left;
@@ -71,6 +73,54 @@ a {
   line-height: 64px;
   font-size: 15px;
   color: #363636;
+}
+.navbar .nav .nav-left .hide {
+  height: 0;
+  position: absolute;
+  top: 66px;
+  left: 0;
+  z-index: 199;
+  background: #fff;
+}
+.navbar .nav .nav-left .hide .hide-list {
+  height: 226px;
+  display: none;
+}
+.navbar .nav .nav-left .hide .hide-list ul {
+  float: left;
+  padding-top: 32px;
+}
+.navbar .nav .nav-left .hide .hide-list ul > li:last-child {
+  border-right: 1px #e4e4e4 solid;
+}
+.navbar .nav .nav-left .hide .hide-list ul li {
+  width: 100px;
+  float: left;
+  padding-right: 55px;
+  text-align: center;
+}
+.navbar .nav .nav-left .hide .hide-list ul li a img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 18px;
+}
+.navbar .nav .nav-left .hide .hide-list ul li a p {
+  font-size: 13px;
+  color: #363636;
+  line-height: 18px;
+}
+.navbar .nav .nav-left .hide .hide-list .hide-text {
+  float: left;
+  margin-left: 25px;
+}
+.navbar .nav .nav-left .hide .hide-list .hide-text li {
+  clear: both;
+  margin-bottom: 13px;
+}
+.navbar .nav .nav-left .hide .hide-list .hide-text li a {
+  font-size: 15px;
+  color: #363636;
+  line-height: 18px;
 }
 .navbar .nav .nav-right {
   float: right;
@@ -83,8 +133,6 @@ a {
   margin-right: 94px;
 }
 .navbar .nav .nav-right .navbar-ul {
-  margin: 0;
-  padding: 0;
   float: right;
   line-height: 64px;
 }
@@ -117,11 +165,8 @@ a {
   left: 862px;
   bottom: 12px;
 }
-.banner .banner-icon ul {
-  margin: 0;
-  padding: 0;
-}
 .banner .banner-icon ul li {
+  cursor: pointer;
   float: left;
   width: 20px;
   height: 20px;
@@ -148,12 +193,9 @@ a {
 }
 .list .list-top span {
   font-size: 26px;
-  margin: 0;
   line-height: 101px;
 }
 .list .list-top ul {
-  margin: 0;
-  padding: 0;
   display: inline-block;
   margin-left: 98.5px;
   margin-top: 50px;
@@ -183,6 +225,7 @@ a {
   background: #f5f5f5;
   display: none;
   justify-content: space-between;
+  width: 100%;
 }
 .list .list-good .good-span1 {
   width: 295px;
@@ -226,6 +269,32 @@ a {
 .list .list-good .good-span2 .good-price span {
   font-size: 16px;
 }
+.list .list-left {
+  width: 25px;
+  height: 44px;
+  border: 1px #e4e4e4 solid;
+  position: absolute;
+  left: 0;
+  bottom: 171px;
+  border-left: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.list .list-right {
+  width: 25px;
+  height: 44px;
+  border: 1px #e4e4e4 solid;
+  position: absolute;
+  right: 0;
+  bottom: 171px;
+  border-right: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
 .pic p {
   height: 31px;
   font-size: 26px;
@@ -237,9 +306,13 @@ a {
   position: relative;
 }
 .pic .pic-banner img {
-  display: none;
   position: absolute;
-  top: 0;
+  top: 20px;
+  left: 0;
+}
+.pic .pic-banner .pic-img {
+  position: absolute;
+  top: -10px;
   left: 0;
 }
 .pic .pic-banner .pic-icon {
@@ -286,14 +359,12 @@ a {
   text-align: center;
 }
 .phone-list .phone-pic .phone-span1 .good-price h3 {
-  margin: 0;
   margin-top: 13px;
 }
 .phone-list .phone-pic .phone-span1 .good-price p {
   font-size: 12px;
   color: #b1b1b1;
   line-height: 31px;
-  margin: 0;
 }
 .phone-list .phone-pic .phone-span1 .good-price del {
   color: #cbcbcb;
@@ -318,14 +389,12 @@ a {
   text-align: center;
 }
 .phone-list .phone-pic .phone-span2 .good-price h3 {
-  margin: 0;
   margin-top: 13px;
 }
 .phone-list .phone-pic .phone-span2 .good-price p {
   font-size: 12px;
   color: #b1b1b1;
   line-height: 31px;
-  margin: 0;
 }
 .phone-list .phone-pic .phone-span2 .good-price del {
   color: #cbcbcb;
@@ -350,14 +419,12 @@ a {
   text-align: center;
 }
 .phone-list .phone-pic .phone-span3 .good-price h3 {
-  margin: 0;
   margin-top: 13px;
 }
 .phone-list .phone-pic .phone-span3 .good-price p {
   font-size: 12px;
   color: #b1b1b1;
   line-height: 31px;
-  margin: 0;
 }
 .phone-list .phone-pic .phone-span3 .good-price del {
   color: #cbcbcb;
@@ -394,7 +461,6 @@ a {
   margin-left: 127px;
 }
 .message .message-ul .message-li .message-text p {
-  margin: 0;
   font-size: 14px;
   margin-bottom: 0;
   line-height: 30px;
@@ -451,4 +517,56 @@ a {
 .footer .footer-bottom {
   height: 132px;
   background: #535353;
+}
+.footer .footer-bottom .footer-left {
+  height: 56px;
+  width: 480px;
+  float: left;
+}
+.footer .footer-bottom .footer-left ul {
+  height: 28px;
+  width: 480px;
+  padding-top: 28px;
+}
+.footer .footer-bottom .footer-left ul li {
+  float: left;
+  padding-right: 26px;
+}
+.footer .footer-bottom .footer-left ul li a {
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+}
+.footer .footer-bottom .footer-left p {
+  font-size: 12px;
+  color: #ccc;
+  line-height: 14px;
+  margin-top: 14px;
+}
+.footer .footer-bottom .footer-right {
+  width: 280px;
+  height: 76px;
+  float: right;
+}
+.footer .footer-bottom .footer-right p {
+  font-size: 12px;
+  color: #fff;
+  margin-bottom: 9px;
+  margin-top: 30px;
+}
+.clickicon {
+  width: 54px;
+  height: 54px;
+  background: #d8dfe1;
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.clickicon i {
+  font-size: 30px;
 }
