@@ -192,14 +192,18 @@ $('#clickicon').click(function(){
 
 //二级菜单
 $('#navbar .nav .nav-left .hide').width($(document).width()).css('left',-$('#navbar .nav .nav-left').offset().left);
-$('#navbar .nav .nav-left .nav-ul').hover(function(){
-    $('.navbar .nav .nav-left .hide').css('height','226px')
+$('#navbar .nav .nav-left').hover(function(){
+    $('.navbar .nav .nav-left .hide').css('height','226px');
 },function(){
     $('.navbar .nav .nav-left .hide').css('height','0');
     $('#navbar .nav .nav-left .hide .hide-list').hide();
+    $('#navbar .nav .nav-left .nav-ul li').removeClass('liactive');
+    $('#navbar .nav .nav-left .nav-ul li a').css('color','#363636');
 })
 
 $('#navbar .nav .nav-left .nav-ul li').mouseenter(function(){
     var g = $(this).index();
     $('#navbar .nav .nav-left .hide .hide-list').eq(g).show().siblings('.hide-list').hide();
+    $(this).addClass('liactive').siblings('li').removeClass('liactive');
+    $(this).find('a').css('color','#1428a0').parent().siblings().find('a').css('color','#363636');
 })

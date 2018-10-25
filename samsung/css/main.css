@@ -34,6 +34,9 @@ a {
   color: #363636;
   line-height: 36px;
 }
+.header .title .title-left a:hover {
+  color: #337ab7;
+}
 .header .title .title-right {
   float: right;
   height: 36px;
@@ -42,6 +45,9 @@ a {
   font-size: 15px;
   color: #363636;
   line-height: 36px;
+}
+.header .title .title-right a:hover {
+  color: #337ab7;
 }
 .header .title .title-right a .icon-7 {
   font-size: 6px;
@@ -65,9 +71,12 @@ a {
   width: 100%;
   height: 100%;
 }
+.navbar .nav .nav-left .nav-ul .liactive {
+  border-bottom: 2px #3200a0 solid;
+}
 .navbar .nav .nav-left .nav-ul li {
   float: left;
-  padding-right: 33px;
+  margin-right: 33px;
 }
 .navbar .nav .nav-left .nav-ul li a {
   line-height: 64px;
@@ -98,6 +107,9 @@ a {
   float: left;
   padding-right: 55px;
   text-align: center;
+}
+.navbar .nav .nav-left .hide .hide-list ul li:hover a p {
+  color: #0061c5;
 }
 .navbar .nav .nav-left .hide .hide-list ul li a img {
   width: 100px;
@@ -139,6 +151,9 @@ a {
 .navbar .nav .nav-right .navbar-ul li {
   float: left;
   padding-left: 33px;
+}
+.navbar .nav .nav-right .navbar-ul li:hover a {
+  color: #337ab7;
 }
 .navbar .nav .nav-right .navbar-ul li a {
   font-size: 15px;

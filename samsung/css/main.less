@@ -30,6 +30,9 @@ a{
             height: 36px;
             float: left;
             a{
+                &:hover{
+                    color: #337ab7;
+                }
                 font-size: 18px;
                 color: #363636;
                 line-height: 36px;
@@ -39,6 +42,9 @@ a{
             float: right;
             height: 36px;
             a{
+                &:hover{
+                    color: #337ab7;
+                }
                 font-size: 15px;
                 color: #363636;
                 line-height: 36px;
@@ -65,9 +71,12 @@ a{
             .nav-ul{
                 width: 100%;
                 height: 100%;
+                .liactive{
+                    border-bottom: 2px #3200a0 solid;
+                }
                 li{
                     float: left;
-                    padding-right: 33px;
+                    margin-right: 33px;
                     a{
                        line-height: 64px;
                        font-size: 15px;
@@ -92,6 +101,9 @@ a{
                             border-right: 1px #e4e4e4 solid;
                         }
                         li{
+                            &:hover a p{
+                                color: #0061c5;
+                            }
                             width: 100px;
                             float: left;
                             padding-right: 55px;
@@ -140,6 +152,9 @@ a{
                 float: right;
                 line-height: 64px;
                 li{
+                    &:hover a{
+                        color: #337ab7;
+                    }
                     float: left;
                     padding-left: 33px;
                     a{
