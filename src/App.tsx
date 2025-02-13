@@ -1,13 +1,16 @@
-import React from 'react';
-import {Button} from 'antd'
+import {routers} from '@/routes'
+import {useRoutes,BrowserRouter} from 'react-router-dom'
+
+function MyRouter(){
+  return useRoutes(routers)
+}
 
 function App() {
   return (
-    <div className="App">
-      <Button type="primary">ceshi</Button>
-      <Button>测试</Button>
-    </div>
-  );
+    <BrowserRouter>
+      <MyRouter />
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
