@@ -1,5 +1,5 @@
 import {routers} from '@/routes'
-import {useRoutes,BrowserRouter} from 'react-router-dom'
+import {useRoutes,HashRouter} from 'react-router-dom'
 
 function MyRouter(){
   return useRoutes(routers)
@@ -7,9 +7,9 @@ function MyRouter(){
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <MyRouter />
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
