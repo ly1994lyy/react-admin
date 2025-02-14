@@ -4,7 +4,7 @@ import { resolve } from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base:'./',
+  base:'/react-admin/',
   plugins: [react()],
   resolve: {
     alias: {
