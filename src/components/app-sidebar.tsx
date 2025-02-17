@@ -1,90 +1,173 @@
-import { Calendar, Home, Inbox, Search, Settings } from 'lucide-react'
+import * as React from 'react'
+import {
+  AudioWaveform,
+  BookOpen,
+  Bot,
+  Command,
+  Frame,
+  GalleryVerticalEnd,
+  Map,
+  PieChart,
+  Settings2,
+  SquareTerminal,
+} from 'lucide-react'
 
+import { NavMain } from '@/components/nav-main'
+import { NavProjects } from '@/components/nav-projects'
+import { NavUser } from '@/components/nav-user'
+import { TeamSwitcher } from '@/components/team-switcher'
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  // SidebarMenuSub,
-  // SidebarMenuSubItem
+  SidebarRail,
 } from '@/components/ui/sidebar'
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger
-} from '@/components/ui/collapsible'
-import { ChevronDown } from 'lucide-react'
 
-// Menu items.
-const items = [
-  {
-    title: 'Home',
-    url: '#',
-    icon: Home
+// This is sample data.
+const data = {
+  user: {
+    name: 'shadcn',
+    email: 'm@example.com',
+    avatar: '/avatars/shadcn.jpg',
   },
-  {
-    title: 'Inbox',
-    url: '#',
-    icon: Inbox
-  },
-  {
-    title: 'Calendar',
-    url: '#',
-    icon: Calendar
-  },
-  {
-    title: 'Search',
-    url: '#',
-    icon: Search
-  },
-  {
-    title: 'Settings',
-    url: '#',
-    icon: Settings
-  }
-]
+  teams: [
+    {
+      name: 'Acme Inc',
+      logo: GalleryVerticalEnd,
+      plan: 'Enterprise',
+    },
+    {
+      name: 'Acme Corp.',
+      logo: AudioWaveform,
+      plan: 'Startup',
+    },
+    {
+      name: 'Evil Corp.',
+      logo: Command,
+      plan: 'Free',
+    },
+  ],
+  navMain: [
+    {
+      title: 'Playground',
+      url: '#',
+      icon: SquareTerminal,
+      isActive: true,
+      items: [
+        {
+          title: 'History',
+          url: '#',
+        },
+        {
+          title: 'Starred',
+          url: '#',
+        },
+        {
+          title: 'Settings',
+          url: '#',
+        },
+      ],
+    },
+    {
+      title: 'Models',
+      url: '#',
+      icon: Bot,
+      items: [
+        {
+          title: 'Genesis',
+          url: '#',
+        },
+        {
+          title: 'Explorer',
+          url: '#',
+        },
+        {
+          title: 'Quantum',
+          url: '#',
+        },
+      ],
+    },
+    {
+      title: 'Documentation',
+      url: '#',
+      icon: BookOpen,
+      items: [
+        {
+          title: 'Introduction',
+          url: '#',
+        },
+        {
+          title: 'Get Started',
+          url: '#',
+        },
+        {
+          title: 'Tutorials',
+          url: '#',
+        },
+        {
+          title: 'Changelog',
+          url: '#',
+        },
+      ],
+    },
+    {
+      title: 'Settings',
+      url: '#',
+      icon: Settings2,
+      items: [
+        {
+          title: 'General',
+          url: '#',
+        },
+        {
+          title: 'Team',
+          url: '#',
+        },
+        {
+          title: 'Billing',
+          url: '#',
+        },
+        {
+          title: 'Limits',
+          url: '#',
+        },
+      ],
+    },
+  ],
+  projects: [
+    {
+      name: 'Design Engineering',
+      url: '#',
+      icon: Frame,
+    },
+    {
+      name: 'Sales & Marketing',
+      url: '#',
+      icon: PieChart,
+    },
+    {
+      name: 'Travel',
+      url: '#',
+      icon: Map,
+    },
+  ],
+}
 
-export function AppSidebar() {
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar>
-      <SidebarHeader>Header</SidebarHeader>
+    <Sidebar collapsible="icon" {...props}>
+      <SidebarHeader>
+        <TeamSwitcher teams={data.teams} />
+      </SidebarHeader>
       <SidebarContent>
-        <Collapsible defaultOpen className="group/collapsible">
-          <SidebarGroup>
-            <SidebarGroupLabel asChild>
-              <CollapsibleTrigger>
-              App
-                <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
-              </CollapsibleTrigger>
-            </SidebarGroupLabel>
-            <CollapsibleContent>
-              <SidebarGroupContent>
-                <SidebarMenu>
-                  {items.map(item => (
-                    <SidebarMenuItem key={item.title}>
-                      <SidebarMenuButton asChild>
-                        <a href={item.url}>
-                          <item.icon />
-                          <span>{item.title}</span>
-                        </a>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  ))}
-                </SidebarMenu>
-              </SidebarGroupContent>
-            </CollapsibleContent>
-            
-          </SidebarGroup>
-        </Collapsible>
-        
+        <NavMain items={data.navMain} />
+        <NavProjects projects={data.projects} />
       </SidebarContent>
-      <SidebarFooter>Footer</SidebarFooter>
+      <SidebarFooter>
+        <NavUser user={data.user} />
+      </SidebarFooter>
+      <SidebarRail />
     </Sidebar>
   )
 }
