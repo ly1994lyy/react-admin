@@ -13,8 +13,22 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from '@/components/ui/sidebar'
+import { useEffect } from 'react'
+import { useLocation,useNavigate } from 'react-router-dom'
 
 export default function Page() {
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  useEffect(()=>{
+    if(location.pathname !== '/login'){
+      if(!localStorage.getItem('react-admin-token')){
+        navigate('/login')
+      }else{
+        navigate('/about')
+      }
+    }
+  })
   return (
     <SidebarProvider>
       <AppSidebar />
