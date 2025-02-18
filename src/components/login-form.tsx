@@ -9,7 +9,7 @@ import {
 import { Input } from '@/components/ui/input'
 import { Form,FormField,FormItem,FormLabel,FormControl } from '@/components/ui/form'
 import { BorderBeam } from '@/registry/magicui/border-beam'
-import { loginApi } from '@/apis/auth'
+import { ILoginData, loginApi } from '@/apis/auth'
 import { useToast } from '@/hooks/use-toast'
 import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
@@ -23,7 +23,7 @@ export function LoginForm() {
       password: ''
     }
   })
-  const handleSubmit = async (data) => {
+  const handleSubmit = async (data:ILoginData) => {
     try {
       await loginApi(data)
       toast({
@@ -74,7 +74,7 @@ export function LoginForm() {
               </FormItem>
             )} />
             <div className="flex flex-col gap-6 mt-4">
-              <Button type="submit" className="w-full" onClick={handleSubmit}>
+              <Button type="submit" className="w-full">
               Login
               </Button>
               <Button variant="outline" className="w-full">

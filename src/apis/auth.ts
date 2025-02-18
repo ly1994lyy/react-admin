@@ -1,6 +1,6 @@
 import httpInstance from '@/utils/request'
 
-interface ILoginData {
+export interface ILoginData {
   username: string;
   password: string;
 }
