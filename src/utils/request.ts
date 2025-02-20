@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios,{AxiosResponse} from 'axios'
 import { toast } from '@/hooks/use-toast'
 
 const requestInstance = axios.create({
@@ -15,7 +15,7 @@ requestInstance.interceptors.request.use(
 )
 
 requestInstance.interceptors.response.use(
-  response => {
+  (response:AxiosResponse) => {
     if (response.data.code !== 200) {
       console.log(response.data.msg)
       toast({title: 'Error', description: response.data.msg})
