@@ -13,23 +13,39 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from '@/components/ui/sidebar'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Outlet, useLocation,useNavigate } from 'react-router-dom'
+import { getCurrentUserInfoApi } from '@/apis/user'
 
 export default function Page() {
   const location = useLocation()
   const navigate = useNavigate()
+  const [menus,setMenus] = useState([])
+
+  const queryUserInfo = async () => {
+    try {
+      const res = await getCurrentUserInfoApi()
+      setMenus(res.data.menus)
+      console.log(res)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  
 
   useEffect(()=>{
     if(location.pathname !== '/login'){
       if(!localStorage.getItem('react-admin-token')){
         navigate('/login')
+      }else{
+        queryUserInfo()
       }
     }
-  })
+  },[])
   return (
     <SidebarProvider>
-      <AppSidebar />
+      <AppSidebar menus={menus} />
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
           <div className="flex items-center gap-2 px-4">

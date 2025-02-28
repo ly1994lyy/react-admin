@@ -3,7 +3,7 @@ import { ComponentType, useState } from 'react'
 
 const iconComponents = Object.entries(LucideIcons)
 
-const ICONS_PER_PAGE = 20 // 每页显示的图标数量
+const ICONS_PER_PAGE = 400 // 每页显示的图标数量
 const IconMgnt = () => {
   console.log(iconComponents.splice(0, 20))
   

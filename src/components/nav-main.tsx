@@ -14,6 +14,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from '@/components/ui/sidebar'
+import { useNavigate } from 'react-router-dom'
 
 export function NavMain({
   items,
@@ -29,9 +30,13 @@ export function NavMain({
     }[]
   }[]
 }) {
+  const navigate = useNavigate()
+  const goPath = (path:string)=> {
+    navigate(path)
+  }
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Platform</SidebarGroupLabel>
+      <SidebarGroupLabel>Common</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
           <Collapsible
@@ -53,9 +58,7 @@ export function NavMain({
                   {item.items?.map((subItem) => (
                     <SidebarMenuSubItem key={subItem.title}>
                       <SidebarMenuSubButton asChild>
-                        <a href={subItem.url}>
-                          <span>{subItem.title}</span>
-                        </a>
+                        <span className='cursor-pointer' onClick={()=>goPath(subItem.url)}>{subItem.title}</span>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   ))}

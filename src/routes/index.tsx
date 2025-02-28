@@ -6,10 +6,11 @@ import About from '@/views/about.tsx'
 import IconMgnt from '@/views/iconMgnt'
 
 export const routers:RouteObject[] = [
+  {path:'/',element:<Navigate to='/home' />},
   {
     path:'/login', element: <Login />
   },
-  {path:'/',element:<Navigate to='/home' />},
+  
   {
     path:'/',
     element:<Main />,

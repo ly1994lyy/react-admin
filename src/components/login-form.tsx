@@ -26,7 +26,7 @@ export function LoginForm() {
   const handleSubmit = async (data:ILoginData) => {
     try {
       const res = await loginApi(data)
-      localStorage.setItem('react-admin-token',res.token)
+      localStorage.setItem('react-admin-token',res.data.token)
       toast({
         title: 'Login Success',
         description: 'Welcome back!',

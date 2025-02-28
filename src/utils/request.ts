@@ -7,6 +7,9 @@ const requestInstance = axios.create({
 
 requestInstance.interceptors.request.use(
   config => {
+    if(localStorage.getItem('react-admin-token')){
+      config.headers['Authorization'] = 'Bearer ' + localStorage.getItem('react-admin-token')
+    }
     return config
   },
   error => {
