@@ -13,36 +13,12 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from '@/components/ui/sidebar'
-import { useEffect, useState } from 'react'
-import { Outlet, useLocation,useNavigate } from 'react-router-dom'
-import { getCurrentUserInfoApi } from '@/apis/user'
+import { Outlet } from 'react-router-dom'
+import useMenuStore from '@/stores/setMenuStore'
 
 export default function Page() {
-  const location = useLocation()
-  const navigate = useNavigate()
-  const [menus,setMenus] = useState([])
-
-  const queryUserInfo = async () => {
-    try {
-      const res = await getCurrentUserInfoApi()
-      setMenus(res.data.menus)
-      console.log(res)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-  
-
-  useEffect(()=>{
-    if(location.pathname !== '/login'){
-      if(!localStorage.getItem('react-admin-token')){
-        navigate('/login')
-      }else{
-        queryUserInfo()
-      }
-    }
-  },[])
+  const menus = useMenuStore(state=>state.menus)
+  console.log('layout',menus)
   return (
     <SidebarProvider>
       <AppSidebar menus={menus} />

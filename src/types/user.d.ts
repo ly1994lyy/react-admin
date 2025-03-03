@@ -7,3 +7,7 @@ interface User{
   username:string,
   avatar:string
 }
+
+type CurrentUser = {
+  menus:CreateMenuDto[]
+}

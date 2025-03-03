@@ -5,6 +5,6 @@ export interface ILoginData {
   password: string;
 }
 
-export const loginApi = (data: ILoginData):Promise<ILoginResponse> => {
+export const loginApi = (data: ILoginData):Promise<IResponse<ILoginResponse>> => {
   return httpInstance.post('/auth/login', data)
 }

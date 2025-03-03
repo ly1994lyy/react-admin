@@ -1,12 +1,8 @@
 import * as React from 'react'
 import {
   AudioWaveform,
-  BookOpen,
-  Bot,
   Command,
   GalleryVerticalEnd,
-  Settings2,
-  SquareTerminal,
 } from 'lucide-react'
 
 import { NavMain } from '@/components/nav-main'
@@ -47,9 +43,8 @@ const data = {
   ],
 }
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>& { menus: CreateMenuDto[] }) {
   const menus = handleMenus(props.menus)
-  console.log(menus)
   
   return (
     <Sidebar collapsible="icon" {...props}>

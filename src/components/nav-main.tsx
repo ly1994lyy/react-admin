@@ -1,4 +1,4 @@
-import { ChevronRight, type LucideIcon } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 import {
   Collapsible,
   CollapsibleContent,
@@ -19,20 +19,11 @@ import { useNavigate } from 'react-router-dom'
 export function NavMain({
   items,
 }: {
-  items: {
-    title: string
-    url: string
-    icon?: LucideIcon
-    isActive?: boolean
-    items?: {
-      title: string
-      url: string
-    }[]
-  }[]
+  items: MenuProps[]
 }) {
   const navigate = useNavigate()
-  const goPath = (path:string)=> {
-    navigate(path)
+  const goPath = (parentPath:string,path:string)=> {
+    navigate(parentPath?parentPath+'/'+path:path)
   }
   return (
     <SidebarGroup>
@@ -58,7 +49,7 @@ export function NavMain({
                   {item.items?.map((subItem) => (
                     <SidebarMenuSubItem key={subItem.title}>
                       <SidebarMenuSubButton asChild>
-                        <span className='cursor-pointer' onClick={()=>goPath(subItem.url)}>{subItem.title}</span>
+                        <span className='cursor-pointer' onClick={()=>goPath(item.url,subItem.url)}>{subItem.title}</span>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   ))}
